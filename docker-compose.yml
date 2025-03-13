@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  postgres_cadastro:
+    container_name: postgres_cadastro_ifood
+    image: postgres:14
+    restart: always
+    environment:
+      POSTGRES_USER: "cadastro"
+      POSTGRES_PASSWORD: "cadastro"
+      POSTGRES_DB: "cadastro_ifood"
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+    ports:
+      - "5423:5432"
